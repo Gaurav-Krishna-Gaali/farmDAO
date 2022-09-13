@@ -9,8 +9,8 @@ import {
 import { VoteType } from "@thirdweb-dev/sdk";
 import { ethers } from "ethers";
 
-export const ApeDaoContext = createContext();
-export const ApeDaoProvider = ({ children }) => {
+export const FarmDAOContext = createContext();
+export const FarmDAOProvider = ({ children }) => {
   const currentUserAddress = useAddress();
   const connectWithMetamask = useMetamask();
   const disconnectWallet = useDisconnect();
@@ -82,7 +82,7 @@ export const ApeDaoProvider = ({ children }) => {
     }
   };
   return (
-    <ApeDaoContext.Provider
+    <FarmDAOContext.Provider
       value={{
         getAllProposals,
         isExecutable,
@@ -95,6 +95,6 @@ export const ApeDaoProvider = ({ children }) => {
       }}
     >
       {children}
-    </ApeDaoContext.Provider>
+    </FarmDAOContext.Provider>
   );
 };

@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { ApeDaoContext } from "../context/context";
+import { FarmDAOContext } from "../context/context";
 import { ethers } from "ethers";
 import styles from "../styles/Home.module.css";
 import Login from "../components/Login";
@@ -12,7 +12,7 @@ const Home = () => {
   const [proposals, setProposals] = useState(null);
   const [proposalInput, setProposalInput] = useState("");
   const { getAllProposals, isExecutable, currentUserAddress, createProposal } =
-    useContext(ApeDaoContext);
+    useContext(FarmDAOContext);
 
   useEffect(() => {
     getAllProposals()
@@ -32,7 +32,6 @@ const Home = () => {
       {currentUserAddress ? (
         <>
           <Header />
-
           <ToastContainer />
 
           {/* {address === '0x35d94e754F4c368F1A64B998751cd4d597Ae8fE6' && (

@@ -10,16 +10,16 @@ import {
 import { VoteType } from "@thirdweb-dev/sdk";
 import { ethers } from "ethers";
 
-export const ApeDaoContext = createContext();
-export const ApeDaoProvider = ({ children }) => {
+export const FarmDAOContext = createContext();
+export const FarmDAOProvider = ({ children }) => {
   /*
     Step 1. Get User address using thirdwebs hook
     Step 2. Get Token and vote contract instances using thirdwebs hooks
     Step 3. We need way to connect and disconnect from the dapp. 
   */
   const currentUserAddress = useAddress(); //Get the address using
-  let vote = useVote("0x4d24Cb21cCCd535F51a1EbFEaDF8E5F11d410DCd");
-  let token = useToken("0x794dcC38c893376A4db9026D5B2D26f9d49f5511");
+  let vote = useVote("0xd8a0c13aF520E8Fa20de7f9459763aD84D9358d8");
+  let token = useToken("0x892ce8705658BEc10CfF76Ee087E234A332B3664");
   let connectWithMetamask = useMetamask();
   let disconnectWallet = useDisconnect();
 
@@ -90,7 +90,7 @@ export const ApeDaoProvider = ({ children }) => {
     }
   };
   return (
-    <ApeDaoContext.Provider
+    <FarmDAOContext.Provider
       value={{
         getAllProposals,
         isExecutable,
@@ -103,6 +103,6 @@ export const ApeDaoProvider = ({ children }) => {
       }}
     >
       {children}
-    </ApeDaoContext.Provider>
+    </FarmDAOContext.Provider>
   );
 };

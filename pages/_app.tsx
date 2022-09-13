@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { ApeDaoProvider } from "../context/context";
+import { FarmDAOProvider } from "../context/context";
 import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
 
 const activeChainId = ChainId.Mumbai;
@@ -8,9 +8,9 @@ const activeChainId = ChainId.Mumbai;
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThirdwebProvider desiredChainId={activeChainId}>
-      <ApeDaoProvider>
+      <FarmDAOProvider>
         <Component {...pageProps} />;
-      </ApeDaoProvider>
+      </FarmDAOProvider>
     </ThirdwebProvider>
   );
 }

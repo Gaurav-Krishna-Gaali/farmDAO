@@ -1,12 +1,12 @@
 import { useContext, useEffect, useMemo, useState } from "react";
 import styles from "../styles/ProposalCard.module.css";
 import { ethers } from "ethers";
-import { ApeDaoContext } from "../context/context";
+import { FarmDAOContext } from "../context/context";
 import truncateEthAddress from "truncate-eth-address";
 
 const ProposalCard = ({ proposal }) => {
   const { currentUserAddress, voteFor, executeProposal } =
-    useContext(ApeDaoContext);
+    useContext(FarmDAOContext);
   const [statusText, setStatusText] = useState("");
   const [statusColor, setStatusColor] = useState("#fff");
 
@@ -77,7 +77,7 @@ const ProposalCard = ({ proposal }) => {
             return (
               <div key={Math.random()}>
                 <div>
-                  {vote.label}: {Math.trunc(voteCount)} APE Coins
+                  {vote.label}: {Math.trunc(voteCount)} Farm Coins
                 </div>
               </div>
             );
