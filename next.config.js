@@ -2,7 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["cdn.stamp.fyi"],
+    // domains: ["cdn.stamp.fyi"],
+    unoptimized: true,
   },
 };
 
